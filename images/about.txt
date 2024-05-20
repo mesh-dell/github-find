@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Dela Gothic One
+- Font Author: Copyright 2020 The Dela Gothic Project Authors (https://github.com/syakuzen/DelaGothic)
+- Font Source: https://fonts.gstatic.com/s/delagothicone/v15/hESp6XxvMDRA-2eD0lXpDa6QkBAGRUsJQAlbUA.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

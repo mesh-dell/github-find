@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --yellow: #f0c52d;
+}
+[data-theme="dark"] {
+  --bg: #222831;
+  --bg-sec: #31363f;
+  --accent: #76abae;
+  --font: #eeeeee;
+  --font-sec: #95989d;
+}
+[data-theme="light"] {
+  --bg: #eeeeee;
+  --bg-sec: #d9d9d9;
+  --accent: #76abae;
+  --font: #222831;
+  --font-sec: #31363f;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* search section */
+section.search {
+  width: 80%;
+  margin: auto;
+  /* background-color: #f0c52d; */
+  height: 90vh;
+}
+/* Nav */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  /* background-color: aquamarine; */
+}
+.logo {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+.logo,
+.logo span {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--font);
+}
+.logo span {
+  background-color: var(--bg-sec);
+  padding: 1.5% 5%;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+/* Star */
+
+.star {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--font);
+  color: var(--bg);
+  padding: 0.5% 2%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.star h1 {
+  font-size: 14px;
+  font-weight: normal;
+}
+.star i {
+  color: var(--yellow);
+  margin-left: 14px;
+}
+
+/* Github Logo */
+.logoGithub {
+  text-align: center;
+  padding: 2.5% 0;
+}
+.logoGithub i {
+  font-size: 10vw;
+  color: var(--font);
+}
+
+/* Search form */
+form#searchForm {
+  /* background-color: bisque; */
+  text-align: center;
+}
+
+input#searchInput {
+  background-color: var(--bg-sec);
+  color: var(--font);
+  border: none;
+  font-size: 16px;
+  width: 50%;
+  padding: 1.5% 2.5%;
+  border-radius: 8px;
+}
+input#searchInput:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* Top searches */
+
+.topSearches {
+  /* background-color: blue; */
+  color: var(--font);
+  padding-top: 3%;
+}
+
+/* search results */
+.topSearches ul#searchResults{
+  list-style: none;
+  margin-left: 25%;
+  color: var(--font-sec);
+  display: none;
+}
+
+.topSearches ul li {
+  margin: 0 0 1% 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+.topSearches ul li.title {
+  font-weight: 800;
+}
+
+/* Button go back */
+.buttonBack {
+  /* background-color: rgb(36, 75, 62); */
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+button.goBack {
+  height: 40px;
+  width: 40px;
+  border-style: none;
+  border-radius: 50%;
+  background-color: var(--bg-sec);
+  color: var(--font);
+  margin: 0 auto;
+  cursor: pointer;
+}
+button.goBack:active {
+  outline: 2px solid var(--font);
+}
+
+/* Profile Section */
+section.profile {
+  /* background-color: aquamarine; */
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5% 0;
+  display: none;
+}
+
+/* Card profile */
+section.profile .card {
+  background-color: var(--bg-sec);
+  width: 43%;
+  /* height: 85%; */
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--font);
+  padding: 0 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card div {
+  margin: 0 0 3% 0;
+}
+/* Avatar */
+.card .avatar {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+}
+/* Card link */
+.card a {
+  color: var(--accent);
+}
+/* Card icons */
+.card i {
+  color: var(--font-sec);
+  font-size: 30px;
+  /* background-color: blueviolet; */
+  margin-right: 5%;
+  width: 38px;
+  text-align: center;
+}
+/* Card username */
+.card .username,
+.card .html_url {
+  display: flex;
+  align-items: center;
+}
+.card .username h2 {
+  color: var(--font);
+  font-weight: 600;
+}
+
+/* Crad Bio */
+.card .bio {
+  display: flex;
+  align-items: center;
+}
+
+/* Card grid */
+.gridContainer {
+  display: grid;
+  /* background-color: brown; */
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 58% 42%;
+}
+.gridContainer .gridItem {
+  /* border: 2px solid salmon; */
+  display: flex;
+  align-items: center;
+}
+/* .gridItem.email{
+  grid-row: 4 / -1;
+  grid-column: 1 / 3;
+  background-color: yellowgreen;
+} */
+/* .gridItem:last-child{
+  grid-row: 3 /4;
+  grid-column: 1 / 3;
+}
+.gridItem.email i, .gridItem:last-child i{
+  margin-right: 5%;
+} */
+
+.gridContainer .gridItem > * {
+  margin: 0 8% 0 0;
+}
+
+/* Repos */
+section.profile .repos {
+  /* background-color: #fa7e7e; */
+  width: 48%;
+  text-align: left;
+  height: 100%;
+  padding-bottom: 1%;
+}
+
+/* Repo heading */
+.repos .heading {
+  color: var(--font);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 2.5%;
+}
+
+/* Repo card */
+
+.repo {
+  border-radius: 5px;
+  background-color: var(--bg-sec);
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--font);
+  padding: 2.5% 5%;
+  margin: 1% 0 0 0;
+}
+.repo-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+.repo-detail a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.repo-detail span {
+  border: 2px solid var(--font-sec);
+  border-radius: 10px;
+  color: var(--font-sec);
+  padding: 0 1.5%;
+}
+.repo .repo-info {
+  display: flex;
+  align-items: center;
+}
+.repo .language,
+.stars,
+.forks {
+  display: flex;
+  align-items: center;
+}
+.repo-info h4 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.repo-info i,
+.repo-info span {
+  margin-right: 10px;
+}
+.repo-info div {
+  margin-right: 30px;
+}
+/* Language colour */
+.repo .language span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #fa7e7e;
+  border-radius: 50%;
+}
+.starIcon {
+  color: var(--yellow);
+}
+
+/* Loader animation */
+.loader {
+  border: 10px solid var(--font); /* Light grey */
+  border-top: 10px solid var(--accent); /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+.loader-container {
+  width: 100%;
+  /* background-color: #f0c52d; */
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
