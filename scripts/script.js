@@ -12,6 +12,14 @@ const loader = document.querySelector(".loader-container");
 const searchResults = document.getElementById("searchResults");
 const profile = document.getElementById("profile");
 
+let theme = detectSystemTheme();
+
+if (theme == "light") {
+  document.querySelector("html").setAttribute("data-theme", theme);
+} else {
+  document.querySelector("html").setAttribute("data-theme", "dark");
+}
+
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   // Display Loader
@@ -199,3 +207,30 @@ function renderRepos(username) {
       profile.appendChild(repoContainer);
     });
 }
+
+// Detects user theme
+function detectSystemTheme() {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: light)").matches
+  ) {
+    return "light";
+  } else if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    return "dark";
+  } else {
+    return "light";
+  }
+}
+
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (event) => {
+    if (event.matches) {
+      document.querySelector("html").setAttribute("data-theme", "dark");
+    } else {
+      document.querySelector("html").setAttribute("data-theme", "light");
+    }
+  });
