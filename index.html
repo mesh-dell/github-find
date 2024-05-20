@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Find</title>
+
+    <!-- Detect User theme -->
+
+    <style>
+      :root {
+        --bg: #eeeeee;
+        --bg-sec: #d9d9d9;
+        --accent: #76abae;
+        --font: #222831;
+        --font-sec: #31363f;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const userPrefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = userPrefersDark ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -85,11 +107,9 @@
     <!-- Profile section -->
     <section class="profile" id="profile">
       <!-- Card -->
-      
 
       <!-- <i class="fa-solid fa-building"></i> for organization-->
       <!-- Repos -->
-      
     </section>
     <script src="scripts/script.js" type="module"></script>
   </body>
