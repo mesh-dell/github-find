@@ -11,6 +11,8 @@ const input = document.getElementById("searchInput");
 const loader = document.querySelector(".loader-container");
 const searchResults = document.getElementById("searchResults");
 const profile = document.getElementById("profile");
+const scrollingElement = document.scrollingElement || document.body;
+const star = document.querySelector(".star");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -55,6 +57,7 @@ function renderTopUsers(topUsers) {
       renderCard(user.url);
       renderRepos(user.login);
       profile.style.display = "flex";
+      scrollingElement.scrollTop = scrollingElement.scrollHeight;
     });
     searchResults.appendChild(element);
   });
@@ -209,3 +212,8 @@ window
       document.querySelector("html").setAttribute("data-theme", "light");
     }
   });
+
+// Redirect user on click star
+star.addEventListener("click", () => {
+  window.location.href = "https://github.com/mesh-dell/github-find";
+});
